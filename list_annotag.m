@@ -120,9 +120,9 @@ fr = struct( ...
 
 % 検索
 for i = 1:length(fr)
-    % タグ文字列 'TAG: '
-    tag_str = sprintf('%s: ', fr(i).Tag);
-    % タグ文字列 'TAG: 'の文字数
+    % タグ文字列 'TAG:'
+    tag_str = sprintf('%s:', fr(i).Tag);
+    % タグ文字列 'TAG:'の文字数
     tag_str_len = length(tag_str);
     % テキストからアノテーションタグを検索
     idx = cellfun(@(x) strncmp(x, tag_str, tag_str_len), text);
@@ -166,9 +166,9 @@ function show_annotag(fr)
 for i = 1:length(fr)
     % どれか一つでも検索結果がある
     if ~isempty(fr(i).Object)
-        % タグ文字列 'TAG: '
-        tag_str = sprintf('%s: ', fr(i).Tag);
-        % タグ文字列 'TAG: 'の文字数
+        % タグ文字列 'TAG:'
+        tag_str = sprintf('%s:', fr(i).Tag);
+        % タグ文字列 'TAG:'の文字数
         tag_str_len = length(tag_str);
         
         % テキストの抽出
