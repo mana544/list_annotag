@@ -1,10 +1,24 @@
 # lists "annotation tags" for Simulink model
 
+[![View listing annotation tags on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://jp.mathworks.com/matlabcentral/fileexchange/122832-listing-annotation-tags)
+
 この関数は、Simulinkモデル内の “アノテーションタグ” 付き注釈を検索してリスト表示します。
 
 “アノテーションタグ” とは、`TODO:`, `FIXME:` などの特定キーワードではじまる注釈です。
 
 ![demo](docs/demo.gif)
+
+- [lists "annotation tags" for Simulink model](#lists-annotation-tags-for-simulink-model)
+  - [Usage](#usage)
+  - [Syntax](#syntax)
+  - [入力引数](#入力引数)
+    - [`mdl` \[char\]](#mdl-char)
+    - [`tag` \[char | 1xN cell(char)\]](#tag-char--1xn-cellchar)
+  - [出力引数](#出力引数)
+    - [`find_result` \[1xN struct\]](#find_result-1xn-struct)
+  - [デフォルトのアノテーションタグ](#デフォルトのアノテーションタグ)
+  - [Notes](#notes)
+
 
 -----
 
@@ -15,18 +29,14 @@
    ```
    TODO: あとで作業する
    ```
+   ![Add Simulink annotation](docs/add_sl_annotation.png)
 3. MATLABコマンドウインドウ上で以下のコマンドを入力して実行します。
    ```matlab
    list_annotag
    ```
-   2.で書いた注釈が検索されてリストとなって表示されます。
-   リストのパスをクリックすると注釈にフォーカスします。
-4. 2.で書いた注釈オブジェクトを削除します。
-5. 再びMATLABコマンドウインドウで以下のコマンドを入力して実行します。
-   ```matlab
-   list_annotag
-   ```
-   今度は何も検索されないはずです。
+   2.で書いた注釈が検索されてリストとなって表示されます。  
+   ![result view](docs/result_view.png)  
+   リストのパスをクリックすると注釈にフォーカスします。  
 
 -----
 
@@ -101,7 +111,7 @@
 ## Notes
 
 * 注釈にタグを書くときは `TODO:コメントを書く` のように、
-  「先頭から書き始める」「半角コロンで終える」
+  「タグは先頭に書く」「半角コロンで終える」
   というルールに基づいて書いて下さい。
 * 注釈の前景色・背景色・フォントスタイルなどは検索に影響しません。
 * 大文字小文字は区別して検索します。
